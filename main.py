@@ -15,7 +15,7 @@ from ws_manager import ConnectionManager
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Allows all origins
+    allow_origins=["http://localhost:3000", "https://event-tracking-iitb-frontend.netlify.app", "*"], # Allows all origins
     allow_credentials=True,
     allow_methods=["*"], # Allows all methods
     allow_headers=["*"], # Allows all headers
@@ -442,5 +442,6 @@ def start_background_tasks():
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=8000)
+
 
 
